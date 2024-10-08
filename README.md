@@ -6,18 +6,18 @@
     * Reschedule appointment
     * Cancel appointment
     * View booked slots
-    * view availble slots
+    * View available slots
   
 ### Tech stack used:
 * Java 21+
 * PostgreSQL V14.1.0+
 * Maven V3.6+
-* IDE (e.g., IntelliJ IDEA, Eclipse) with Lombok and MapStruct plugins
+* IDE (e.g., IntelliJ IDEA, Eclipse)
 
 ### Setting up project:
 ```
-1 clone the repo: https://github.com/rohit114/springboot-playground.git
-2 cd bspringboot-playground
+1.  clone the repo: https://github.com/rohit114/springboot-playground.git
+2.  cd bspringboot-playground
 3. switch git branch to car-service-scheduler
 4. create datbase "car_service_scheduler" in postgres
 5. add postgres sql url in application.properties |  spring.datasource.url= jdbc:postgresql://localhost:5432/car_service_scheduler
@@ -33,19 +33,19 @@ https://drive.google.com/file/d/1WPi7E44YWaDxL66QnNLxvtRlSuq6KaZq/view?usp=shari
 
 ### API Documentation:
 
-1. Book Appoimtment:
+1. Book appointment:
     * METHOD: `POST`
     * URL: `{{BASE_URL}}/api/appointments/book`
     * BODY: `{"customer_id":2,"appointment_date":"2024-10-08","start_time":"18:00","operator_id":1}`
     * api returns booked response
 
-2. Reschedule Appointment:
+2. Reschedule appointment:
     * METHOD: `PUT`
     * URL: `{{BASE_URL}}/api/appointments/reschedule/{appointmentId}`
     * BODY: `{"new_date":"2024-10-08","new_start_time":"17:00","new_operator_id":1}`
     * api returns rescheduled response
 
-3. Cancel Appointment:
+3. Cancel appointment:
     * METHOD: `DELETE`
     * URL: `{{BASE_URL}}/api/appointments/cancel/{appointmentId}`
     * api returns cancel acknowledgement
