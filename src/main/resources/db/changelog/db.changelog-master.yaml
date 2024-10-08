@@ -1,0 +1,14 @@
+# src/main/resources/db/changelog/db.changelog-master.yaml
+databaseChangeLog:
+  - include:
+      file: db/changelog/02-create-operators-table.yaml
+  - include:
+      file: db/changelog/03-create-customers-table.yaml
+  - include:
+      file: db/changelog/04-create-appointments-table.yaml
+  - include:
+      file: db/changelog/05-insert-customers-sample-data.yaml
+  - include:
+      file: db/changelog/06-insert-operator-sample-data.yaml
+
+

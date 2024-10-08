@@ -1,0 +1,42 @@
+
+databaseChangeLog:
+  - changeSet:
+      id: 04-create-appointments-table
+      author: rohit
+      changes:
+        - sql:
+            comment: "Create appointments table with constraints"
+            sql: |
+              CREATE TABLE appointments (
+                  id SERIAL PRIMARY KEY NOT NULL,
+                  operator_id INT NOT NULL,
+                  customer_id INT NOT NULL,
+                  appointment_date DATE NOT NULL,
+                  start_time TIME NOT NULL,
+                  end_time TIME NOT NULL,
+                  status VARCHAR(20) NOT NULL,
+                  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+                  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
+              );
+
+              ALTER TABLE appointments
+                  ADD CONSTRAINT fk_appointments_operator
+                  FOREIGN KEY (operator_id)
+                  REFERENCES operators(id);
+
+              ALTER TABLE appointments
+                  ADD CONSTRAINT fk_appointments_customer
+                  FOREIGN KEY (customer_id)
+                  REFERENCES customers(id);
+
+              ALTER TABLE appointments
+                  ADD CONSTRAINT unique_operator_time
+                  UNIQUE (operator_id, appointment_date, start_time, status);
+      rollback:
+        - sql:
+            comment: "Rollback appointments table and constraints"
+            sql: |
+              ALTER TABLE appointments DROP CONSTRAINT IF EXISTS unique_operator_time;
+              ALTER TABLE appointments DROP CONSTRAINT IF EXISTS fk_appointments_customer;
+              ALTER TABLE appointments DROP CONSTRAINT IF EXISTS fk_appointments_operator;
+              DROP TABLE IF EXISTS appointments;

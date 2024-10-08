@@ -1,10 +1,10 @@
-package com.example.spring_playground;
+package com.example.car_service_scheduler;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringPlaygroundApplicationTests {
+class SpringBootApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>springboot-playground</artifactId>
+	<artifactId>car-service-scheduler</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-playground</name>
-	<description>Demo project for Spring Boot</description>
+	<name>car-service-scheduler</name>
+	<description>car service scheduler sysyem</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -82,6 +82,14 @@
 			<version>1.5.2.Final</version>
 			<scope>provided</scope>
 		</dependency>
+
+		<!-- Liquibase Dependency -->
+		<dependency>
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-core</artifactId>
+		</dependency>
+
+
 	</dependencies>
 
 

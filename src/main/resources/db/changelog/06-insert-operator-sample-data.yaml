@@ -1,0 +1,13 @@
+
+databaseChangeLog:
+  - changeSet:
+      id: 06-insert-operator-sample-data.yaml
+      author: rohit
+      changes:
+        - sql:
+            comment: "Insert initial operator"
+            sql: |
+              INSERT INTO operators (name, email, phone, created_at, updated_at)
+              VALUES 
+                ('ServiceOperator_1', 'service_operator_1@example.com', '9876543211', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+                ('ServiceOperator_2', 'service_operator_2@example.com', '9776543222', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);

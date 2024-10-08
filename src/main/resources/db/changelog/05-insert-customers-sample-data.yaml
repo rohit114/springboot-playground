@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: 05-insert-customers-sample-data.yaml
+      author: yourname
+      changes:
+        - sql:
+            comment: "Insert initial customers"
+            sql: |
+              INSERT INTO customers (name, email, phone, created_at, updated_at)
+              VALUES 
+                ('Rohit', 'rohit@example.com', '9876543210', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+                ('Rahul', 'rahul@example.com', '9976543288', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
