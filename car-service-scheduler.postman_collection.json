@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "41b4df04-fb3f-4888-bffa-0e2bd8362247",
+		"name": "car-service-scheduler",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "4345306"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/appointments/book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customer_id\": 2,\n    \"appointment_date\": \"2024-10-08\",\n    \"start_time\": \"18:00\",\n    \"operator_id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/appointments/book"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/appointments/booked?operator_id=1&date=2024-10-08",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customer_id\": 1,\n    \"appointment_date\": \"2024-10-08\",\n    \"start_time\": \"15:00\",\n    \"operator_id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/appointments/booked?operator_id=1&date=2024-10-08",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"appointments",
+						"booked"
+					],
+					"query": [
+						{
+							"key": "operator_id",
+							"value": "1"
+						},
+						{
+							"key": "date",
+							"value": "2024-10-08"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/appointments/open-slots?operator_id=1&date=2024-10-08",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customer_id\": 1,\n    \"appointment_date\": \"2024-10-08\",\n    \"start_time\": \"15:00\",\n    \"operator_id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/appointments/open-slots?operator_id=1&date=2024-10-08",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"appointments",
+						"open-slots"
+					],
+					"query": [
+						{
+							"key": "operator_id",
+							"value": "1"
+						},
+						{
+							"key": "date",
+							"value": "2024-10-08"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/appointments/cancel/2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customer_id\": 1,\n    \"appointment_date\": \"2024-10-08\",\n    \"start_time\": \"17:00\",\n    \"operator_id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/appointments/cancel/2"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/appointments/reschedule/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"new_date\": \"2024-10-08\",\n    \"new_start_time\": \"17:00\",\n    \"new_operator_id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/appointments/reschedule/1"
+			},
+			"response": []
+		}
+	]
+}
