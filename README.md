@@ -9,7 +9,8 @@
     * View available slots
   
 ### Tech stack used:
-* Java 21+
+* Java V21+
+* Spring boot V3.3.4
 * PostgreSQL V14.1.0+
 * Maven V3.6+
 * IDE (e.g., IntelliJ IDEA, Eclipse)
@@ -61,7 +62,7 @@ https://drive.google.com/file/d/1WPi7E44YWaDxL66QnNLxvtRlSuq6KaZq/view?usp=shari
     * URL: `{{BASE_URL}}/api/appointments/open-slots?operator_id=1&date=2024-10-08`
     * Api will return list of open slots
 
-* You can find the all curl of the apis in the postman collection `car-service-scheduler.postman_collection.json` inside the car-service-scheduler repo
+* You can find the all curl of the apis in the postman collection `car-service-scheduler.postman_collection.json` inside this repo (branch: car-service-scheduler)
 
 ## Stay in touch
 - email me at rohitkumardas114@gmail.com for support or reporting any issues
