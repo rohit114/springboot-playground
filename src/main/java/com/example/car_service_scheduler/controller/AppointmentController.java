@@ -74,7 +74,7 @@ public class AppointmentController {
             @RequestParam("operator_id") Long operatorId,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
         List<Appointment> appointments = appointmentService.getBookedAppointments(operatorId, date);
-        List<LocalTime[]> bookedAppointmentsList = appointments.stream().map(app -> new LocalTime[]{app.getStartTime(), app.getEndTime()}) // Store name and email in an Object array
+        List<LocalTime[]> bookedAppointmentsList = appointments.stream().map(app -> new LocalTime[]{app.getStartTime(), app.getEndTime()})
                 .collect(Collectors.toList());
         return bookedAppointmentsList;
     }

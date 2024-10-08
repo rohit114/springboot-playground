@@ -16,13 +16,13 @@
 
 ### Setting up project:
 ```
-1.  clone the repo: https://github.com/rohit114/springboot-playground.git
-2.  cd bspringboot-playground
-3. switch git branch to car-service-scheduler
+1. clone the repo: https://github.com/rohit114/springboot-playground.git
+2. cd springboot-playground
+3. switch to git branch to "car-service-scheduler"
 4. create datbase "car_service_scheduler" in postgres
 5. add postgres sql url in application.properties |  spring.datasource.url= jdbc:postgresql://localhost:5432/car_service_scheduler
 6. build and run
-7. liquibase will created the initial data and seed the customer and operator with sample data
+7. liquibase will created tables and seed the customer and operator with sample data
 
 ```
 
